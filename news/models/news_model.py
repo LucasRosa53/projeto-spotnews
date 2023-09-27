@@ -1,13 +1,13 @@
 from django.db import models
 from news.models.user_model import Users
 from news.models.category_model import Categories
-from news.validator import validator
+from news.validators.validators import validator_words
 
 
 class News(models.Model):
     title = models.CharField(
         max_length=200,
-        validators=[validator]
+        validators=[validator_words]
     )
     content = models.TextField()
     author = models.ForeignKey(
