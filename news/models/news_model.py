@@ -5,8 +5,9 @@ from news.validator import validator
 
 
 class News(models.Model):
-    title = models.CharField(max_length=200,
-    validators=[validator]
+    title = models.CharField(
+        max_length=200,
+        validators=[validator]
     )
     content = models.TextField()
     author = models.ForeignKey(
