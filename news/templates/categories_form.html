@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário para Nova Categoria</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <ul class="header-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/categories/">Cadastrar Categorias</a></li>
+        </ul>
+    </header>
+    <main>
+        <form action="{% url 'categories-form' %}" method="post">
+            {% csrf_token %}
+            <label for="{{ form.name.id_for_label }}">Nome:</label>
+            {{ form.as_p }}
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+</body>
+</html>
