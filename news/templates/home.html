@@ -11,6 +11,7 @@
             <h2 class="news-title">{{ new.title }}</h2>
             <span class="news-date">{{ new.created_at|date:"d/m/Y" }}</span>
             <img src="{% static new.image %}" alt="{{ new.title }}">
+            <a href="{% url 'news-details-page' news.id %}">{{ news.title }}</a>
         </div>
     {% endfor %}
 {% endblock %}
