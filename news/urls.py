@@ -1,6 +1,5 @@
 from django.urls import path
-from news.views import req_news, news_details
-from .views import category_form
+from news.views import req_news, news_details, category_form
 
 
 urlpatterns = [
